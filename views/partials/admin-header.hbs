@@ -1,0 +1,48 @@
+<header>
+  <div class="brand-wrap">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6 col-lg-4 d-flex">
+          <div class="hambuger-wrap navbar navbar-dark bg-dark navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+              aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <a class="navbar-brand" href="/">
+            <img src="../images/logo_favicon/logo.svg" class="img-fluid" alt="logo" />
+          </a>
+        </div>
+
+        <div class="col-12 col-lg-4 search-col">
+          <form class="d-flex">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search our Products" aria-label="Search" />
+            <button class="btn btn-outline-primary" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+
+        </div>
+        <div class="col-6 col-lg-4 d-flex justify-content-end">
+          <a href="/dashboardAdmin" class="btn  login-logout-btn" style="color: white;">{{fName}}</a>
+          <a href="/logout" class="btn btn-outline-primary login-logout-btn"><i class="fa fa-sign-out"></i>Logout</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light main-navbar">
+    <div class="container">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarToggler">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					{{#navLink '/dashboardAdmin'}} Dashboard Admin {{/navLink}}
+					{{#navLink '/createProduct'}} Product Creation {{/navLink}}
+					{{#navLink '/productInDatabase'}} Product in Database {{/navLink}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

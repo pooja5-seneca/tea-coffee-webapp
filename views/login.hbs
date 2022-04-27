@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tea &amp; Coffee Online</title>
+		{{!-- all meta tags and common link tags --}}
+		{{>headMetaTags}}
+	</head>
+	<body>
+		{{!-- header --}}
+		{{>header}}
+
+		{{!-- div between header and footer--}}
+		<div id="mid-wrap">
+			{{!-- all your content goes here --}}
+            <div class="container-lg my-5 justify-content-center">
+                <div class=" text-success">
+                    <ul class="nav nav-tabs text-success">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="/login" class="text-reset">Login</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/register" class="text-reset">Register</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" border border-success rounded-3">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h2> Login Form</h2>
+
+                            {{#if errorMsg}}
+                            <h5>{{errorMsg}}</h5>
+                            {{else}}
+                            <h5>Please login below</h5>
+                            {{/if}}
+
+                        </div>
+                        <form method="post" action="/login">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email Address" />
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" name="password" id="password" placeholder="Your Password" />
+                            <div class="mb-4 text-center p-5 ">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center"><a href="/forgotpassword"> Forgot Your Password? </a></div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+
+		{{!-- footer --}}
+		{{>footer}}
+
+		{{!-- scripts --}}
+		{{>footerScripts}}
+	</body>
+</html>

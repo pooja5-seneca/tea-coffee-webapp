@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+  <title>Product Update</title>
+</head>
+
+<body>
+  {{>admin-header fName=user.firstName}}
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form class="format-form" action="/update" method="POST" enctype="multipart/form-data" >
+          <fieldset>
+            <legend>Product Update</legend>
+            <div class="form-group">
+
+              <div class="mb-3 row">
+                <label for="product_id" class="col-sm-3 col-form-label">Product Id</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" placeholder="{{data.product.product_id}}" id="product_id"
+                    aria-label="product_id" aria-describedby="basic-addon1" name="product_id" value="{{data.product.product_id}}" readonly />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="product_name" class="col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="product_name" placeholder="{{data.product.product_name}}"
+                    name="product_name" required value="{{data.product.product_name}}"/>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="description" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <textarea class="form-control" id="description" rows="3" placeholder="{{data.product.description}}"
+                    name="description"
+                    required>{{data.product.description}}</textarea>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="unit_price" class="col-sm-3 col-form-label">Unit Price</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="unit_price" placeholder="{{data.product.unit_price}}" name="unit_price"
+                    required value="{{data.product.unit_price}}" />
+                    {{#if data.msg1 }}
+                  <p class="error-msg">{{data.msg1}}</p>
+                  {{/if}}
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" min="0" class="form-control" id="quantity" name="quantity"
+                    placeholder="{{data.product.quantity_in_stock}}" required value="{{data.product.quantity_in_stock}}" />
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="category" class="col-sm-3 col-form-label">Category</label>
+                <div class="col-sm-9">
+                  <select class="form-select" aria-label="Product category" id="category" name="category" required>
+                    <option value="{{data.product.category_id}}">{{data.category.category_type}}</option>
+                    <option value="1">Green Tea</option>
+                    <option value="2">Black Tea</option>
+                    <option value="3">Herbal Tea</option>
+                    <option value="4">Instant Coffee</option>
+                    <option value="5">Ground Coffee</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="discount" class="col-sm-3 col-form-label">Discount</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="discount" name="discount"
+                    placeholder="{{data.product.discount_percentage}}" value="{{data.product.discount_percentage}}" required/>
+                    {{#if data.msg2}}
+                  <p class="error-msg">{{data.msg2}}</p>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" {{#if data.product.bestseller}} checked {{/if}} id="bestseller" name="bestseller"/>
+              <label class="form-check-label" for="bestseller">
+                Bestseller
+              </label>
+            </div>
+
+            <br />
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="image" class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-9">
+                  <img src={{data.product.image}} alt="product image" width="150px" height="130px"/>
+                </div>
+                <input class="form-control-file" type="file" id="image" name="photo" value="{{data.product.image}}"/>
+
+              </div>
+            </div>
+
+            <br />
+            <div class="form-group btn-form">
+              <button type="reset" class="btn btn-primary in-forms">CLEAR</button>
+              <button type="submit" class="btn btn-primary in-forms">UPDATE</button>
+
+            </div>
+            <br />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br />
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+</body>
+
+</html>

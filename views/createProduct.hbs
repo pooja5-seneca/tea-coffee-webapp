@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+  <title>Product creation</title>
+</head>
+
+<body>
+  {{>admin-header fName=user.firstName}}
+  <br />
+  <div class="container create-form">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form class="format-form" method="post" action="/createProduct" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Product Creation</legend>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="product-name" class="form-label">Product name</label> }}
+                <input type="text" class="form-control" id="product-name" placeholder="Product name" name="product_name"
+                  required />
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="description" class="form-label">Product description</label> }}
+                <textarea class="form-control" id="description" rows="2" placeholder="Product description"
+                  name="description" required ></textarea>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="unit_price" class="form-label">Product price</label> }}
+                <input type="text" class="form-control" id="unit_price" placeholder="Product price" name="unit_price"
+                  required />
+                  {{#if data.msg1 }}
+                  <p class="error-msg">{{data.msg1}}</p>
+                  {{/if}}
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="quantity" class="form-label">Quantity in stock</label> }}
+                <input type="number" min="0" class="form-control" id="quantity" name="quantity"
+                  placeholder="Product quantity" required />
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="category" class="form-label">Product category</label> }}
+                <select class="form-select" id="category" name="category" required >
+                  <option value="">Product category</option>
+                  <option value="1">Green Tea</option>
+                  <option value="2">Black Tea</option>
+                  <option value="3">Herbal Tea</option>
+                  <option value="4">Instant Coffee</option>
+                  <option value="5">Ground Coffee</option>
+                </select>
+              </div>
+            
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="discount" class="form-label">Discount percentage</label> }}
+                <input type="text" class="form-control" id="discount" name="discount"
+                  placeholder="Discount percentage" required />
+                   {{#if data.msg2}}
+                  <p class="error-msg">{{data.msg2}}</p>
+                  {{/if}}
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="bestseller" name="bestseller"/>
+              <label class="form-check-label" for="bestseller">
+                Bestseller
+              </label>
+            </div>
+            <br />
+            <div class="form-group">
+              <div class="mb-3">
+                {{! <label for="image" class="form-label">Product Image</label> }}
+                <h6>Upload product image</h6>
+                <input class="form-control-file" type="file" id="image" name="photo" required/>
+                {{#if data.msg3}}
+                  <p class="error-msg">{{data.msg3}}</p>
+                  {{/if}}
+              </div>
+            </div>
+
+            <br />
+            <div class="form-group btn-form">
+              <button type="reset" class="btn btn-primary in-forms">CLEAR</button>
+              <button type="submit" class="btn btn-primary in-forms">CREATE</button>
+            </div>
+            <br />
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <br />
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+
+/* FORM - TABLE */
+form.format-form {
+  width: 500px;
+  border: 1px solid green;
+  border-radius: 1%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+
+div.form-group.btn-form {
+  text-align: center;
+}
+button.btn.btn-primary {
+  background-color: green;
+  border: none;
+  margin-left: 15px;
+}
+legend {
+  padding: 10px;
+  text-align: center;
+  color: green;
+  font-size: 30px;
+}
+td {
+  vertical-align: middle;
+}
+button.btn.in-forms {
+  width: 150px;
+}
+button.btn:hover {
+  background-color: var(--brown);
+  color: white;
+  border: none;
+}
+
+/* HERO SECTION _ ADMIN */
+#hero-section {
+  height: calc(90vh - 50px);
+  z-index: 1;
+  position: relative;
+  color: white;
+  font-weight: bolder;
+  background-image: url("../images/banner1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.603);
+  z-index: -1;
+}
+#hero-section h4 {
+  font-size: 2.2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+#hero-section div {
+  height: 100%;
+}
+button.btn.btn-warning{
+  background-color: rgba(255, 230, 0, 0.904);
+  border: none;
+}
+button.btn.btn-warning:hover{
+  background-color: var(--brown);
+  border: none;
+}
+
+/* HERO SECTION _ USER */
+#hero-section-2 {
+  height: calc(90vh - 50px);
+  z-index: 1;
+  position: relative;
+  color: white;
+  font-weight: bolder;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#hero-section-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.171);
+  z-index: -1;
+}
+#hero-section-2 h4 {
+  font-size: 3rem;
+  height: 100%;
+  text-align: center;
+}
+#hero-section-2 div {
+  height: 100%;
+}
+div.payment.col{
+  text-align: center;
+  max-width: fit-content;
+}
+.error-msg{
+  color: red;
+}
+

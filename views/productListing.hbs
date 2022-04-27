@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>All Products</title>
+		{{!-- all meta tags and common link tags --}}
+		{{>headMetaTags}}
+	</head>
+	<body>
+		{{!-- header --}}
+		{{>header}}
+
+		{{!-- div between header and footer--}}
+		<div id="mid-wrap">
+			{{!-- all your content goes here --}}
+			<div class="container">
+                <div class="filter-icon-title-wrap">
+                    <div class="filter-icon-wrap navbar navbar-expand-lg navbar-light bg-light">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#filterToggler"
+							aria-controls="filterToggler" aria-expanded="false" aria-label="Toggle navigation">
+							<i class="fa fa-filter" aria-hidden="true"></i>
+						</button>
+					</div>
+
+                    <h4 class="display-4 text-center">All Products</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-3">
+                        <div class="navbar-expand-lg">
+                            <div class="flex-column collapse navbar-collapse filter" id="filterToggler">
+                                <div class="card mb-3">
+                                    <div class="card-body filter-wrap">
+                                        <div class="title-wrap mb-3 d-flex justify-content-between">
+                                            <h6 class="h5 text-primary">Filter By</h6>
+                                        </div>
+
+                                        {{#if finalData.allCategories}}
+                                        <form method="post" action="/products">
+                                            {{#each finalData.allCategories}}
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="{{category_id}}" id="{{category_id}}">
+                                                <label class="form-check-label" for="{{category_id}}">{{category_type}}</label>
+                                            </div>
+                                            {{/each}}
+                                            <div class="mt-3">
+                                                <button type="submit" class="btn btn-primary mr-3">Filter</button>
+                                                <button type="reset" class="btn btn-danger">Clear All</button>
+                                            </div>
+                                        </form>
+                                        {{else}}
+                                            <div class="form-check-label">No categories found to filter products</div>
+                                        {{/if}}
+
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="card-body sort-wrap">
+                                        <div class="title-wrap mb-3 d-flex justify-content-between">
+                                            <h6 class="h5 text-primary">Sort</h6>
+                                            <a href="#" class="h5 text-primary">Clear All</a>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sort" id="best-selling">
+                                            <label class="form-check-label" for="best-selling">Best Selling</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sort" id="A-Z">
+                                            <label class="form-check-label" for="A-Z">A-Z</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sort" id="Z-A" checked>
+                                            <label class="form-check-label" for="Z-A">Z-A</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sort" id="price-low-to-high">
+                                            <label class="form-check-label" for="price-low-to-high">Price, Low to High</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sort" id="price-high-to-low">
+                                            <label class="form-check-label" for="price-high-to-low">Price, High to Low</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-9">
+                        {{>productListings allProductsResp=finalData.allProductsResp}}                         
+                    </div>
+                </div>
+
+                
+            </div>
+		</div>
+
+		{{!-- footer --}}
+		{{>footer}}
+
+		{{!-- scripts --}}
+		{{>footerScripts}}
+	</body>
+</html>

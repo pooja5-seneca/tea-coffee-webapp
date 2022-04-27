@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tea &amp; Coffee Online</title>
+    {{!-- all meta tags and common link tags --}}
+    {{>headMetaTags}}
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+
+    {{!-- div between header and footer--}}
+
+    {{!-- all your content goes here --}}
+    <br>
+    <div class="text-center">
+        <h4 style="color:green;">Thank you for placing order with us !! </h4>
+        <br>
+        <h4>Order Summary </h4>
+        <br>
+        <div class=" border border-success rounded-3" style=" width: 900px; margin-left: 200px; float:left;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Unit Price</th>
+                        <th> </th>
+                        <th>Quantity</th>
+                        <th>Total amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="text-body">
+                                Longitude 123°W Blend
+                            </a>
+                        </td>
+                        <td>$14.89</td>
+                        <td> X </td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                        </td>
+                        <td>$14.89</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a class="text-body">
+                                Black Tea Blueberry
+                            </a>
+                        </td>
+                        <td>$13.98</td>
+                        <td> X </td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                        </td>
+                        <td>$13.98</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a class="text-body">
+                                Black Tea Cardamom
+                            </a>
+                        </td>
+                        <td>$8.99</td>
+                        <td> X </td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                        </td>
+                        <td>
+                            $8.99</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9;
+                Subtotal: &emsp; $37.86</p>
+        </div>
+
+    </div>
+
+    <br> <br>
+    {{!-- footer --}}
+    {{>footer}}
+
+    {{!-- scripts --}}
+    {{>footerScripts}}
+</body>
+
+</html>

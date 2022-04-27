@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tea &amp; Coffee Online</title>
+    {{!-- all meta tags and common link tags --}}
+    {{>headMetaTags}}
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+
+    {{!-- div between header and footer--}}
+    <div class="container">
+        {{!-- all your content goes here --}}
+        <div class="container-lg my-5">
+            <div class="row">
+                <div class="col-6 border border-success rounded-3 ">
+                    <br>
+                    <div class=" row">
+                        <h4 class="text-center">Order Summary </h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Unit Price</th>
+                                    <th> </th>
+                                    <th>Quantity</th>
+                                    <th>Total amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="text-body">
+                                            Longitude 123°W Blend
+                                        </a>
+                                    </td>
+                                    <td>$14.89</td>
+                                    <td> X </td>
+                                    <td>
+                                        <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                                    </td>
+                                    <td>$14.89</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a class="text-body">
+                                            Black Tea Blueberry
+                                        </a>
+                                    </td>
+                                    <td>$13.98</td>
+                                    <td> X </td>
+                                    <td>
+                                        <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                                    </td>
+                                    <td>$13.98</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <a class="text-body">
+                                            Black Tea Cardamom
+                                        </a>
+                                    </td>
+                                    <td>$8.99</td>
+                                    <td> X </td>
+                                    <td>
+                                        <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                                    </td>
+                                    <td>
+                                        $8.99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style=" margin-left: 330px; float:left;"> &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9; &#9;
+                            &#9; &#9;
+                            Subtotal: &emsp; $37.86</p>
+                    </div>
+                </div>
+                <div class="col-6 border border-success rounded-3">
+                    <div class=" container-lg my-5">
+                        <div class="text-center">
+                            <h4>Shipping address</h4>
+                        </div>
+                        <div class="col-6 border border-success rounded-3"
+                            style=" width: 200px; margin-left: 150px; float:left;">
+                            <br>
+                            <address style="text-align:center">
+                                {{shippingAddress.inputFirstName}} {{shippingAddress.inputLastName}}
+                                <br>
+                                {{shippingAddress.inputAddress1}} , {{shippingAddress.inputAddress2}}</br>
+                                {{shippingAddress.inputCity}}</br>
+                                {{shippingAddress.inputState}}
+                            </address>
+                        </div>
+                        <br> <br> <br>
+                        <div class="row justify-content-center my-5">
+
+                            <a href="/confirmOrder" class="btn btn-primary ">Pay</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- footer --}}
+    {{>footer}}
+
+    {{!-- scripts --}}
+    {{>footerScripts}}
+</body>
+
+</html>

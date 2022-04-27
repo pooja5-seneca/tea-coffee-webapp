@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tea &amp; Coffee Online</title>
+    {{!-- all meta tags and common link tags --}}
+    {{>headMetaTags}}
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+
+    {{!-- div between header and footer--}}
+
+    {{!-- all your content goes here --}}
+    <br>
+    <div class="text-center">
+        <h3>Order History </h3>
+    </div>
+    <br>
+    <div class="container">
+        <div class=" border border-success rounded-3"
+            style="width: 700px; float:left; height:250px; margin-left: 200px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#959</td>
+                        <td>19 Jan 2022</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>#923</td>
+                        <td>05 Jan 2022</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>#647</td>
+                        <td>24 dec 2021</td>
+                        <td>Cancelled</td>
+                    </tr>
+                    <tr>
+                        <td>#602</td>
+                        <td>15 Dec 2021</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>#576</td>
+                        <td>21 Nov 2021</td>
+                        <td>Completed</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br> <br>
+    {{!-- footer --}}
+    {{>footer}}
+
+    {{!-- scripts --}}
+    {{>footerScripts}}
+</body>
+
+</html>

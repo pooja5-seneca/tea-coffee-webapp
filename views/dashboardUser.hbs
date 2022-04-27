@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+  <title>Dashboard User</title>
+</head>
+
+<body>
+  {{>user-header fName = user.firstName}}
+  <section id="hero-section-2">
+    <div class="container">
+      <br /><br /><br /><br /><br /><br /><br /><br />
+      <h4>
+        Hello {{user.firstName}} {{user.lastName}}<br />
+        Enjoy our products
+      </h4>
+    </div>
+  </section>
+  {{!-- Top Tea Products --}}
+
+  {{!-- div between header and footer--}}
+		<div id="mid-wrap">
+			{{!-- all your content goes here --}}
+			<div class="container">
+
+				<div class="tea-content mb-2">
+					<h4 class="display-4 text-center">Top Tea Products</h4>
+					<div class="row tea-products-wrap products-wrap">
+						{{#each finalData.teaProducts}}
+						<div class="col-prod col-lg-3 col-md-6">
+							{{>productListingItem product=this}}
+						</div>
+						{{/each}}
+					</div>
+				</div>
+
+				<div class="coffee-content mb-2">
+					<h4 class="display-4 text-center">Top Coffee Products</h4>
+					<div class="row coffee-products-wrap products-wrap">
+						{{#each finalData.coffeeProducts}}
+						<div class="col-prod col-lg-3 col-md-6">
+							{{>productListingItem product=this}}
+						</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+  <div class="container">
+    <br />
+    <div class="row justify-content-md-center">
+      <div class="col payment">
+        <img src="images/visa.png" alt="visa" width="150px" height="80px">
+      </div>
+      <div class="col payment">
+        <img src="images/master.jpg" alt="master" width="170px" height="80px">
+      </div>
+      <div class="col payment">
+        <img src="images/paypal.jpg" alt="paypal" width="170px" height="70px">
+      </div>
+      <div class="col payment">
+        <img src="images/american-express.png" alt="american-express" width="150px" height="70px">
+      </div>
+    </div>
+  </div>
+  <br />
+
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+</body>
+
+</html>

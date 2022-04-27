@@ -1,0 +1,156 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+
+  <title>Product Retirement</title>
+</head>
+
+<body>
+  {{>admin-header fName=user.firstName}}
+  <br />
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+
+        <form class="format-form">
+          <fieldset>
+            <legend>Product Retirement</legend>
+            <div class="form-group">
+
+              <div class="mb-3 row">
+                <label for="product-id" class="col-sm-3 col-form-label">Product Id</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" placeholder="Product Id" id="product-id"
+                    aria-label="product-id" aria-describedby="basic-addon1" name="product-id" value="1" readonly />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="product-name" class="col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="product-name" placeholder="Product name"
+                    name="product-name" readonly value="Signature, Breakfast Ground Coffee" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="description" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <textarea class="form-control" id="description" rows="3" placeholder="Product description"
+                    name="description"
+                    readonly>Freshly roasted coffee, ground to suit a variety of brewing gadgets including cafetières, filter coffee machines and drip coffee brew methods.</textarea>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="unit_price" class="col-sm-3 col-form-label">Unit Price</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="unit_price" placeholder="Product price" name="unit_price"
+                    readonly value="18.99" />
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Please enter product price.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" min="0" class="form-control" id="quantity" name="quantity"
+                    placeholder="Product quantity" readonly value="25" />
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="category" class="col-sm-3 col-form-label">Category</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="category" placeholder="Product category" name="category"
+                    readonly value="Ground Coffee" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="discount" class="col-sm-3 col-form-label">Discount</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="discount" name="discount"
+                    placeholder="Discount percentage" value="0.1" readonly />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" checked id="bestseller" readonly />
+              <label class="form-check-label" for="bestseller">
+                Bestseller
+              </label>
+            </div>
+
+            <br />
+            <div class="form-group">
+              <div class="mb-3 row">
+                <label for="image" class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-9">
+                  <img src="images/Picture1.jpg" alt="product image" width="150px" height="130px" />
+                </div>
+
+              </div>
+            </div>
+
+            <br />
+            <div class="form-group btn-form">
+              <button type="button" class="btn btn-danger in-forms" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                DELETE
+              </button>
+
+            </div>
+            <br />
+          </fieldset>
+        </form>
+        <br />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure to delete this product id 1?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+          <button type="button" class="btn btn-primary">YES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+</body>
+
+</html>

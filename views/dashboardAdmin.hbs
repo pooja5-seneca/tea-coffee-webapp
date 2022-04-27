@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+  <title>Dashboard Admin</title>
+
+</head>
+
+<body>
+  {{>admin-header fName=user.firstName}}
+  <section id="hero-section">
+    <div class="container">
+      <h4>
+        Hello {{user.firstName}} {{user.lastName}} you are able to:<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create products<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modify products<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete products<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View products<br />
+      </h4>
+    </div>
+  </section>
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+
+</body>
+
+</html>

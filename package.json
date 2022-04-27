@@ -1,0 +1,35 @@
+{
+  "name": "week7-code",
+  "version": "1.0.0",
+  "description": "Tea-Coffee online sale app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Group 1 Wonder Women",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "client-sessions": "^0.8.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "multer": "^1.4.4",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatemehabedin2/Tea-Coffee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fatemehabedin2/Tea-Coffee/issues"
+  },
+  "homepage": "https://github.com/fatemehabedin2/Tea-Coffee#readme"
+}

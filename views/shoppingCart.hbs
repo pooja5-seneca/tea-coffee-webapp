@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tea &amp; Coffee Online</title>
+    {{!-- all meta tags and common link tags --}}
+    {{>headMetaTags}}
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+
+    {{!-- div between header and footer--}}
+
+    {{!-- all your content goes here --}}
+    <br>
+    <div class="jumbotron text-center">
+        <h1 style="color: #1f2020">Shopping Cart</h1>
+        <br>
+    </div>
+
+    <div class="container">
+
+
+        <div class=" border border-success rounded-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cartData}}
+                    <tr>
+                        <td>
+                            <a class="text-body"><img style="max-width: 100px; max-height: 50px;" src={{image}} /></a>
+                        </td>
+                        <td>
+                            <a class="text-body">
+                                {{product_name}}
+                            </a>
+                        </td>
+                        <td>{{unit_price}}</td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value={{count}} />
+                        </td>
+
+                        <td>
+                            <p>{{total}}</p>
+                        </td>
+                        <td><a href="/product/delete/{{product_id}}" class="btn btn-danger">Remove</a></td>
+
+                    </tr>
+
+                    {{/each}}
+
+                    {{!-- <tr>
+                        <td>
+                            <a class="text-body"><img style="max-width: 100px; max-height: 50px;"
+                                    src="/images/BlackTea_Blueberry.jpg" /></a>
+                        </td>
+                        <td>
+                            <a class="text-body">
+                                Black Tea Blueberry
+                            </a>
+                        </td>
+                        <td>$13.98</td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a class="text-body"><img style="max-width: 100px; max-height: 50px;"
+                                    src="/images/BlackTea_Cardamon.jpg" /></a>
+                        </td>
+                        <td>
+                            <a class="text-body">
+                                Black Tea Cardamom
+                            </a>
+                        </td>
+                        <td>$8.99</td>
+                        <td>
+                            <input type="number" style="width: 70px;" min="1" name="qnt[]" value=1 />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr> --}}
+
+                </tbody>
+            </table>
+
+            <p style="margin-left: 900px;">Subtotal: {{subtotal}}</p>
+
+        </div>
+
+        <div class="clearfix"></div>
+        <br>
+        <a href="/shippingDetail" class="btn btn-primary float-right" style="justify-content: center;">Checkout</a>
+        <br><br>
+        <div class="clearfix"></div>
+    </div>
+
+    {{!--
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure to delete this product?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+
+                    <a href="/product/delete/{{cartData.product_id}}" class="btn btn-primary">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
+
+    {{!-- footer --}}
+    {{>footer}}
+
+    {{!-- scripts --}}
+    {{>footerScripts}}
+</body>
+
+</html>

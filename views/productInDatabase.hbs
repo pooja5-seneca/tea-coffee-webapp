@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+  {{>headMetaTags}}
+  <link rel="stylesheet" href="./css/authenticatedUser.css" />
+  <title>Product in Database</title>
+</head>
+
+<body>
+  {{>admin-header fName=user.firstName}}
+  <br />
+  <div class="container">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Product#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Category</th>
+          <th scope="col">Bestseller</th>
+          <th scope="col">Discount</th>
+          <th scope="col">Image</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td scope="row">{{product_id}}</td>
+          <td style="width: 150px;"> {{product_name}}</td>
+          <td style="width: 350px;">{{description}}</td>
+          <td>${{unit_price}}</td>
+          <td>{{quantity_in_stock}}</td>
+          <td>{{category_id}}</td>
+          <td>{{bestseller}}</td>
+          <td>{{discount_percentage}}</td>
+          <td><img src={{image}} width="100px" height="80px" </td>
+          <td>
+            <form  method="POST" action="updateProduct">
+              <input type="hidden" id="product_id" name="product_id" value={{product_id}}>
+              <button type="submit" class="btn btn-warning">Update</button></a>
+            </form>
+          </td>
+
+          <td>
+             <form  method="POST" action="deleteProduct">
+              <input type="hidden" id="product_id" name="product_id" value={{product_id}}>
+              <button type="submit" class="btn btn-danger">Delete</button></a>
+            </form>
+          </td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+  {{!-- footer --}}
+  {{>footer}}
+
+  {{!-- scripts --}}
+  {{>footerScripts}}
+</body>
+
+</html>

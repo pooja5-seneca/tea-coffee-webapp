@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Search Results</title>
+		{{!-- all meta tags and common link tags --}}
+		{{>headMetaTags}}
+	</head>
+	<body>
+		{{!-- header --}}
+		{{>header searchText=finalData.searchText}}
+
+		{{!-- div between header and footer--}}
+		<div id="mid-wrap">
+			{{!-- all your content goes here --}}
+            <div class="container">
+				{{#if finalData.searchText}}
+					<h4 class="display-4 text-center">Search Results for '{{finalData.searchText}}'</h4>
+				{{/if}}
+
+                {{>productListings allProductsResp=finalData.filteredProductsResp}}                 
+            </div>
+		</div>
+
+		{{!-- footer --}}
+		{{>footer}}
+
+		{{!-- scripts --}}
+		{{>footerScripts}}
+	</body>
+</html>

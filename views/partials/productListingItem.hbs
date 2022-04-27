@@ -1,0 +1,9 @@
+<div class="product product-{{this.product_id}} card text-center">
+    <img class="card-img-top pt-4" src="/{{this.image}}" alt="product" onerror="this.src='/images/product_placeholder.png'">
+    <div class="card-body">
+        <h5 class="card-title prod-name lines-2">{{this.product_name}}</h5>
+        <p class="card-text prod-desc lines-2">{{this.description}}</p>
+        <p class="card-text product-price">${{this.unit_price}}</p>
+        <a href="/products/{{this.product_id}}" class="btn btn-primary">View</a>
+    </div>
+</div>
